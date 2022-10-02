@@ -1,0 +1,143 @@
+div {
+    padding-left: 16px;
+}
+
+body {
+    width: 100%;
+    min-width: 1200px;
+    font-family: Arial;
+    background-color: black;
+    color: white;
+}
+
+.wd-search{
+    display: inline;
+    margin-right: 12px;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+
+.wd-nav-tabs li {
+    font-size: 15px;
+    list-style: none;
+    display: inline-block;
+    padding: 0 16px;
+}
+
+.wd-nav-tabs {
+    width: 100%;
+    color: rgb(110, 118, 125);
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.wd-nav-tabs-selected {
+    color: rgb(29,161,242) !important;
+    border-bottom: solid 4px;
+    padding-bottom: 10px !important;
+}
+
+.wd-box-1 {
+    border-top: 4px solid rgb(47, 51, 54);
+    border-bottom: 4px solid rgb(47, 51, 54);
+    background-color: rgba(33, 32, 32, 0.968);
+    height: 12px;
+    margin-top: 0;
+}
+
+.wd-post{
+    position: relative;
+    padding-top:13px; 
+    height: 120px;
+    border-bottom: solid 3px rgb(47, 51, 54);
+}
+
+.wd-post3 {
+    border-top: solid 3px rgb(47, 51, 54);
+}
+
+.wd-box3 {
+    padding-top: 13px;
+}
+
+
+.wd-post-head {
+    position: relative;
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+    
+}
+
+.wd-yesterday{
+    display: inline;
+    color: rgb(110, 118, 125);
+    font-size: 15px;
+}
+
+.wd-post-head {
+    display: inline;
+}
+.wd-post-head-highlite {
+    color: white;
+}
+
+.wd-views {
+    color: rgb(110, 118, 125);
+    font-size: 13px;
+}
+
+.wd-post-main {
+    font-size: 15px;
+
+}
+
+.wd-post-img {
+    float: right;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: 16px;
+    top: 16px;
+    border-radius: 20px;
+}
+.wd-center{
+    position: relative;
+    float: left;
+    width: 1000px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.wd-left{
+    float: left;
+    position: relative;
+    border-right: solid 3px rgb(47, 51, 54);
+    margin-top: 0px;
+    height: 1000px;
+    width: 16px;
+    padding-left: 0px;
+}
+
+.wd-right {
+    float: left;
+    border-left: solid 3px rgb(47, 51, 54);
+    margin-top: 0px;
+    height: 1000px;
+    width: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.wd-left-a {
+    position: relative;
+    top: 0px;
+    margin-top: 0px;
+}
+
+.wd-points {
+    display: inline;
+    position: absolute;
+    right: 16px;
+}
+
+
