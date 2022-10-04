@@ -563,16 +563,38 @@ p#id-selector-2 {
 
 
 @media (min-width: 0px)
-and (max-width: 600px) {
-    .media-query {
-        background-color: yellow;
-    }
-
-    .media-query {
-        background-color: red;
-        color: white;
-    }
+   and (max-width: 600px) {
+  body {
+    background-color: rgb(0, 255, 140);
+  }
+  .media-query {
+    background-color: rgb(255, 0, 149);
+    color: white;
+  }
 }
+@media (min-width: 600px)
+   and (max-width: 1200px) {
+  body {
+    background-color: blue;
+    color: white;
+  }
+  .media-query {
+    background-color: yellow;
+    color: black;
+  }
+}
+@media (min-width: 1200px)
+   and (max-width: 1800px) {
+  body {
+    background-color: red;
+    color: white;
+  }
+  .media-query {
+    background-color: blue;
+    color: white;
+  }
+}
+
 
 
 
