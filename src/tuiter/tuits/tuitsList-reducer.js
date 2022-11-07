@@ -1,6 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 import tuitsList from './tuitList.json';
 
+
+
 const currentUser = {
     "userName": "NASA",
     "handle": "@nasa",
@@ -16,9 +18,9 @@ const templateTuit = {
     "image": "",
     "content": "",
     "content2": "",
-    "replies": 4200,
-    "retuits": 3500,
-    "likes": 37500,
+    "replies": 0,
+    "retuits": 0,
+    "likes": 0,
     "liked": false
 }
 const tuitsListSlice = createSlice({
@@ -38,9 +40,26 @@ const tuitsListSlice = createSlice({
                                                                  ...templateTuit,
                                                                  _id: (new Date()).getTime(),
                                                              })
-                                           }
+                                           },
+
+                                           likeTuit(state, action){
+                                               const tuitIndex = state.findIndex((tuit) => tuit._id === action.payload._id)
+                                               state[tuitIndex].liked = true;
+                                               state[tuitIndex].likes += 1;
+                                           },
+                                           unlikeTuit(state, action){
+                                               const tuitIndex = state.findIndex((tuit) => tuit._id === action.payload._id)
+                                               state[tuitIndex].liked = false;
+                                               state[tuitIndex].likes -= 1;
+
+                                           },
+                                           updateProfile(state, action){
+                                               const tuitIndex = state.findIndex((tuit) => tuit._id === action.payload._id)
+                                               state[tuitIndex] = action.payload
+
+                                           },
                                        }
                                    });
 
-export const {createTuit, deleteTuit} = tuitsListSlice.actions;
+export const {createTuit, deleteTuit, likeTuit, unlikeTuit, updateProfile} = tuitsListSlice.actions;
 export default tuitsListSlice.reducer;

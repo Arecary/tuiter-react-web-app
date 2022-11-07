@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
+
+
 
 const ProfileItem = (
+
     {
-        profiles = { firstName: 'Shi', lastName: 'Zeng', handle: '@areca',
+        profiles = {
+            FirstName: 'Shi', lastName: 'Zeng', handle: '@areca',
             profilePicture: 'Reat.png', 	bannerPicture: 'univers.jpg',
             bio: 'Faculty, Software Engineer, AI, Space, and renewable enthusiast.Retuits and likes are not endorsements.',
             website: 'youtube.com/123',
@@ -13,9 +19,12 @@ const ProfileItem = (
 ) => {
 
 
+    // const profiles = useSelector((state) => state)
+    const navigate = useNavigate();
+
+
     return(
         <div>
-
 
         <div className="row">
             <div className="col-2 position-relative" >
@@ -25,7 +34,7 @@ const ProfileItem = (
 
             </div>
             <div className="col-10">
-                <h4 className="fw-bolder">{profiles.firstName} {profiles.lastName}</h4>
+                <h4 className="fw-bolder">{profiles.FirstName} {profiles.lastName}</h4>
                 <div className="text-secondary">
                     6,114 Tweets
                 </div>
@@ -35,11 +44,12 @@ const ProfileItem = (
         <div className="position-relative">
             <img src={`/images/${profiles.bannerPicture}`} width="100%" height="300em" className="pb-5"/>
             <img src={`/images/${profiles.profilePicture}`} className="rounded-circle position-absolute wd-nudge-up bottom-0 bg-light " width="100em" height="100em"/>
-            <button type="button" className="btn btn-light position-absolute end-0 bottom-0">Edit profile</button>
+
+            <button  className="btn btn-light position-absolute end-0 bottom-0" onClick={()=>navigate("/tuiter/edit-profile")} >Edit profile</button>
         </div>
 
         <div className="ps-2 mt-3">
-            <h5 className="fw-bolder">{profiles.firstName} {profiles.lastName}</h5>
+            <h5 className="fw-bolder">{profiles.FirstName} {profiles.lastName}</h5>
             <div className="text-secondary">
                 {profiles.handle}
             </div>
@@ -77,8 +87,6 @@ const ProfileItem = (
 
             </div>
         </div>
-
-
 
 
         </div>

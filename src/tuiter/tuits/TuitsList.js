@@ -13,11 +13,10 @@ const TuitsList = () => {
             <div className="list-group-item a6-main">
             {
                 postsArray.map(Post =>
-                                   <>
-
-                                       <TuitItems  key={Post} Post={Post}/>
+                                   <div>
+                                       <TuitItems key={Post} Post={Post}/>
                                        <TuitStats key={Post} Post={Post}/>
-                                   </>
+                                   </div>
 
                 )
             }

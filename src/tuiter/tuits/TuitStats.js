@@ -1,4 +1,10 @@
 import React from "react";
+import {useDispatch} from "react-redux";
+import {likeTuit} from "./tuitsList-reducer"
+import {unlikeTuit} from "./tuitsList-reducer"
+
+
+
 
 const TuitStats = ({
                        Post = {
@@ -11,6 +17,15 @@ const TuitStats = ({
 
                        }
                    }) => {
+    const dispatch = useDispatch();
+    const unlikeclick = (Post) =>{
+        dispatch(likeTuit(Post))
+
+    }
+    const likeclick = (Post) =>{
+        dispatch(unlikeTuit(Post))
+
+    }
 
     return (
 
@@ -22,31 +37,44 @@ const TuitStats = ({
             <div className="col-11">
                 <div className="row">
                     <div className="col-3 text-secondary">
-                        <i className="bi bi-chat"></i>&nbsp;&nbsp;{Post.replies}
+                        <button className="btn btn-light">
+                        <i className="bi bi-chat"></i>
+                        </button>&nbsp;&nbsp;{Post.replies}
                     </div>
 
                     <div className="col-3 text-secondary">
-                        <i className="bi bi-arrow-repeat"></i>&nbsp;&nbsp;{Post.retuits}
+                        <button className="btn btn-light">
+                        <i className="bi bi-arrow-repeat"></i>
+                        </button>&nbsp;&nbsp;{Post.retuits}
                     </div>
 
                     <div className="col-3 text-secondary">
                         {
                             Post.liked &&
                             <div>
-                                <i className="bi bi-heart-fill text-danger"></i>&nbsp;&nbsp;{Post.likes}
+                                <button className="btn btn-light " onClick={()=>likeclick(Post)}>
+                                <a className="bi bi-heart-fill text-danger" ></a>
+                                </button>
+                                &nbsp;&nbsp;{Post.likes}
+
                             </div>
                         }
                         {
                             !Post.liked &&
                             <div>
-                                <i className="bi bi-heart"></i>&nbsp;&nbsp;{Post.likes}
+                                <button className="btn btn-light" onClick={()=>unlikeclick(Post)}>
+                                <i className="bi bi-heart" ></i>
+                                </button>&nbsp;&nbsp;{Post.likes}
+
                             </div>
                         }
 
                     </div>
 
                     <div className="col-3 text-secondary">
+                        <button className="btn btn-light">
                         <i className="bi bi-share"></i>
+                        </button>
                     </div>
                 </div>
 

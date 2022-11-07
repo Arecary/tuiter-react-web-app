@@ -5,6 +5,7 @@ import TuitsList from "./TuitsList";
 
 
 
+
 const TuitItems = (
 
     {
@@ -20,12 +21,15 @@ const TuitItems = (
         }
     }
 ) => {
+
     const dispatch = useDispatch();
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuit(id));
     }
+    console.log("key is " +  Post.id);
 
     return (
+
 
             <div className="row" >
                 <div className="col-1 ">
@@ -70,7 +74,7 @@ const TuitItems = (
                     </div>
                     <br/>
 
-                    {/*<TuitStats/>*/}
+                    {/*<TuitStats Post={Post}/>*/}
 
                     {/*<div>*/}
                     {/*    <ul className="list-group list-group-horizontal ">*/}

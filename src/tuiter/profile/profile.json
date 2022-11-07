@@ -1,6 +1,7 @@
  [
    {
-     "irstName": "Jose",
+     "id": 1,
+     "FirstName": "Jose",
      "lastName": "Annunziato",
      "handle": "@jannunzi",
      "profilePicture": "jose.png",
