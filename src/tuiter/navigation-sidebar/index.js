@@ -104,8 +104,19 @@ const NavigationSidebar = (
                 </div>
 
             </a>
-            <a className={`list-group-item
-                    ${active === 'profile' ? 'active' : ''}`}>
+            {/*<link to="/tuiter/profile"  className={`list-group-item*/}
+            {/*        ${active === 'profile' ? 'active' : ''}`}>*/}
+            {/*    <div className="row">*/}
+            {/*        <div className="col-2">*/}
+            {/*            <i className="bi bi-person-fill"></i>*/}
+            {/*        </div>*/}
+            {/*        <div className="col-10 d-xxl-block d-xl-block d-lg-none d-sm-none d-none">*/}
+            {/*            Profile*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</link>*/}
+            <Link to="/tuiter/profile" className={`list-group-item
+                    ${active[2] === 'profile' ? 'active' : ''}`}>
                 <div className="row">
                     <div className="col-2">
                         <i className="bi bi-person-fill"></i>
@@ -114,8 +125,7 @@ const NavigationSidebar = (
                         Profile
                     </div>
                 </div>
-
-            </a>
+            </Link>
             <a className={`list-group-item
                     ${active === 'more' ? 'active' : ''}`}>
                 <div className="row">
