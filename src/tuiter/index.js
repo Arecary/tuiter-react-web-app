@@ -37,7 +37,7 @@ function Tuiter() {
                     <Routes>
                         <Route index element={<Home/>}/>
                         <Route path="explore" element={<Explore/>}/>
-                        <Route path="profile" element={<Profile/>}/>
+                        <Route path="profile/*" element={<Profile/>}/>
                         <Route path="edit-profile" element={<EditProfile/>}/>
                     </Routes>
 

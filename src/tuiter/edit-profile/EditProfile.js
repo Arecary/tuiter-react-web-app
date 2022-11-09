@@ -1,49 +1,35 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom"
-import Button from "bootstrap/js/src/button";
-import {useSelector} from "react-redux";
-
-
-// const profiles = { FirstName: 'Shi', lastName: 'Zeng', handle: '@areca',
-//     profilePicture: 'Reat.png', 	bannerPicture: 'univers.jpg',
-//     bio: 'Faculty, Software Engineer, AI, Space, and renewable enthusiast.Retuits and likes are not endorsements.',
-//     website: 'youtube.com/123',
-//     location: 'Boston, MA',	dateOfBirth: '2/3/1996',	dateJoined: ' Joined 4/2022',
-//     followingCount: 340,	followersCount: 223
-// }
-
-
+import {useDispatch} from "react-redux";
+import {updateProfile} from "../profile/profile-reducer";
 
 const EditProfiles = (
-
-    {
-        profiles = {
-            FirstName: 'Shi', lastName: 'Zeng', handle: '@areca',
-            profilePicture: 'Reat.png', 	bannerPicture: 'univers.jpg',
-            bio: 'Faculty, Software Engineer, AI, Space, and renewable enthusiast.Retuits and likes are not endorsements.',
-            website: 'youtube.com/123',
-            location: 'Boston, MA',	dateOfBirth: '2/3/1996',	dateJoined: ' Joined 4/2022',
-            followingCount: 340,	followersCount: 223
-        }}
-
-
+    {profiles}
 ) => {
-    // const profiles = useSelector((state) => state)
 
+    const dispatch = useDispatch();
     const [name, setName] = useState(profiles.FirstName + profiles.lastName)
     const changeName = (event) => {
         const newName = event.target.value
-        setName(newName )
+        setName(newName)
     }
 
     const navigate = useNavigate();
 
+    const update = (profiles, newTuitText) => {
+        dispatch(updateProfile({
+                                   ...profiles,
+                                   FirstName: newTuitText
+                               }
+                 )
+        );
+    }
 
     return (
         <div>
 
             <div className="row mb-2 mt-1">
-                <div className="col-2 position-relative" >
+                <div className="col-2 position-relative">
                     <h3>
                         <a className="bi bi-x-lg float-left" href="/tuiter/profile"></a>
                     </h3>
@@ -52,14 +38,18 @@ const EditProfiles = (
                 <div className="col-10 position-relative">
                     <h4 className="fw-bolder">Edit profile</h4>
 
-                    <button className="btn btn-dark rounded-pill position-absolute end-0 top-0" onClick={()=>navigate("/tuiter/profile")} >save</button>
+                    <button className="btn btn-dark rounded-pill position-absolute end-0 top-0"
+                            onClick={() => navigate("/tuiter/profile")}>save
+                    </button>
 
                 </div>
             </div>
 
             <div className="position-relative">
                 <img src="/images/univers.jpg" width="100%" height="300em" className="pb-5"/>
-                <img src="/images/Reat.png" className="rounded-circle position-absolute wd-nudge-up bottom-0 bg-light " width="100em" height="100em"/>
+                <img src="/images/Reat.png"
+                     className="rounded-circle position-absolute wd-nudge-up bottom-0 bg-light "
+                     width="100em" height="100em"/>
             </div>
 
             <div>
@@ -67,10 +57,11 @@ const EditProfiles = (
                 <br/>
                 Name
                 <br/>
-                <textarea cols="50" value={name} onChange={changeName}></textarea>
-                {/*<pre>*/}
-                {/*    {name}*/}
-                {/*</pre>*/}
+                <textarea cols="50" value={profiles.FirstName}
+                          onChange={(e) => update(profiles, e.target.value)}></textarea>
+                <pre>
+                    {name}
+                </pre>
             </div>
 
             <div>
@@ -111,9 +102,5 @@ const EditProfiles = (
     )
 
 }
-
-
-
-
 
 export default EditProfiles;

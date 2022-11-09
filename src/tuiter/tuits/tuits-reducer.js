@@ -1,8 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import tuits from './tuits.json';
-
-
-
 
 const tuitsSlice = createSlice({
                                    name: 'tuits',

@@ -4,8 +4,9 @@ import ProfileItem from "./profileitem";
 
 
 const ProfileComponent = () => {
+    const profiles = useSelector((state) => state)
 
-    const profiles = useSelector(state => state.profiles)
+    // const profiles = useSelector(state => state.profiles)
     return(
                 // <ul className="list-group">
                 // {
@@ -16,7 +17,7 @@ const ProfileComponent = () => {
                 //     )
                 // }
                 // </ul>
-        <ProfileItem/>
+        <ProfileItem profiles={profiles}/>
 
     );
 

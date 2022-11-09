@@ -1,22 +1,25 @@
 import React from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {likeTuit} from "./tuitsList-reducer"
 import {unlikeTuit} from "./tuitsList-reducer"
 
 
 
 
-const TuitStats = ({
+const TuitStats = (
+    {
                        Post = {
-                           avatarIcon: 'starship.jpg', userName: 'Elon Musk', handle: '@elonmusk',
-                           time: '23h', title1: 'Amazing show about ', link: '@lnspiration4x ',
-                           title2: 'mission!', image: '../../../images/countdown.jpeg',
-                           content: 'Countdown: Inspiration4 Mission to Space | Netflix Official Site',
-                           content2: 'From training to launch to landing, this all-access docuseries rides along with the Inspiration4 crew on the first all-civilian orbital space mission.',
-                           replies: 4200, retuits: 3500, likes: 37500, liked: true
+                           "avatarIcon": "starship.jpg", "userName": "Elon Musk", "handle": '@elonmusk',
+                           "time": '23h', "title1": 'Amazing show about ', "link": '@lnspiration4x ',
+                           "title2": 'mission!', "image": '../../../images/countdown.jpeg',
+                           "content": 'Countdown: Inspiration4 Mission to Space | Netflix Official Site',
+                           "content2": 'From training to launch to landing, this all-access docuseries rides along with the Inspiration4 crew on the first all-civilian orbital space mission.',
+                           "replies": 4200, "retuits": 3500, "likes": 37500, "liked": true
 
                        }
-                   }) => {
+                   }
+                   ) => {
+    // const Post = useSelector((state) => state.tuitsList)
     const dispatch = useDispatch();
     const unlikeclick = (Post) =>{
         dispatch(likeTuit(Post))

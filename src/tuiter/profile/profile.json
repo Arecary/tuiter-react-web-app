@@ -1,17 +1,15 @@
- [
+
    {
-     "id": 1,
-     "FirstName": "Jose",
-     "lastName": "Annunziato",
-     "handle": "@jannunzi",
-     "profilePicture": "jose.png",
-     "bannerPicture": "polyglot.png",
+     "FirstName": "Shi",
+     "lastName": "Zeng",
+     "handle": "@areca",
+     "profilePicture": "Reat.png",
+     "bannerPicture": "univers.jpg",
      "bio": "Faculty, Software Engineer, AI, Space, and renewable enthusiast.Retuits and likes are not endorsements.",
-     "website": "youtube.com/webdevtv",
+     "website": "youtube.com/007",
      "location": "Boston, MA",
-     "dateOfBirth": "7/7/1968",
-     "dateJoined": "4/2009",
+     "dateOfBirth": "02/03/1996",
+     "dateJoined": "4/2022",
      "followingCount": 340,
      "followersCount": 223
  }
- ]
