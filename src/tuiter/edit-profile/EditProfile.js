@@ -16,10 +16,10 @@ const EditProfiles = (
 
     const navigate = useNavigate();
 
-    const update = (profiles, newTuitText) => {
+    const update = (profiles, newText) => {
         dispatch(updateProfile({
                                    ...profiles,
-                                   FirstName: newTuitText
+                                   FirstName: newText
                                }
                  )
         );
@@ -31,7 +31,7 @@ const EditProfiles = (
             <div className="row mb-2 mt-1">
                 <div className="col-2 position-relative">
                     <h3>
-                        <a className="bi bi-x-lg float-left" href="/tuiter/profile"></a>
+                        <a className="bi bi-x-lg float-left" href="../tuiter/profile"></a>
                     </h3>
 
                 </div>
