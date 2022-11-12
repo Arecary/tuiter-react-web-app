@@ -35,7 +35,7 @@ const ProfileItem = (
 
             </div>
             <div className="col-10">
-                <h4 className="fw-bolder">{profiles.FirstName} {profiles.lastName}</h4>
+                <h4 className="fw-bolder">{profiles.FirstName}</h4>
                 <div className="text-secondary">
                     6,114 Tweets
                 </div>
@@ -50,7 +50,7 @@ const ProfileItem = (
         </div>
 
         <div className="ps-2 mt-3">
-            <h5 className="fw-bolder">{profiles.FirstName} {profiles.lastName}</h5>
+            <h5 className="fw-bolder">{profiles.FirstName}</h5>
             <div className="text-secondary">
                 {profiles.handle}
             </div>

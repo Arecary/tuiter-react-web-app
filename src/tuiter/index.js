@@ -21,7 +21,9 @@ const store = configureStore(
 
 
 
-function Tuiter() {
+const Tuiter = () => {
+
+
 
     return(
         <Provider store={store}>

@@ -1,10 +1,24 @@
-import React from "react";
-import {useSelector} from "react-redux";
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import ProfileItem from "./profileitem";
+import EditProfiles from "../edit-profile/EditProfile";
+import {updateProfile} from "./profile-reducer";
 
 
 const ProfileComponent = () => {
-    const profiles = useSelector((state) => state)
+    const profiles = useSelector((state) => state.profiles)
+
+    // const dispatch = useDispatch();
+    // const [name,setName] = useState(profiles.FirstName )
+    // const updateName = () => {
+    //     dispatch(updateProfile(name))
+    //
+    // }
+
+
+
+
+
 
     // const profiles = useSelector(state => state.profiles)
     return(
@@ -17,8 +31,17 @@ const ProfileComponent = () => {
                 //     )
                 // }
                 // </ul>
-        <ProfileItem profiles={profiles}/>
+        <>
+        <ProfileItem profiles={profiles}
 
+        />
+        {/*<EditProfiles profiles={profiles}*/}
+        {/*              updateName={updateName}*/}
+        {/*              name = {name}*/}
+        {/*              setName={setName}*/}
+
+        {/*/>*/}
+        </>
     );
 
 }

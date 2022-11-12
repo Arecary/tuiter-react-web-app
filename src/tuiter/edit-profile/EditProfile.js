@@ -8,21 +8,25 @@ const EditProfiles = (
 ) => {
 
     const dispatch = useDispatch();
-    const [name, setName] = useState(profiles.FirstName + profiles.lastName)
-    const changeName = (event) => {
-        const newName = event.target.value
-        setName(newName)
-    }
+    const [name, setName] = useState(profiles.FirstName)
+    const [location, setLocation] = useState(profiles.location)
+    const [bio, setBio] = useState(profiles.bio)
+    const [website, setWebsite] = useState(profiles.website)
+    const [dateOfBirth, setDateOfBirth] = useState(profiles.dateOfBirth)
 
-    const navigate = useNavigate();
+    let navigate = useNavigate();
 
-    const update = (profiles, newText) => {
-        dispatch(updateProfile({
-                                   ...profiles,
-                                   FirstName: newText
-                               }
-                 )
-        );
+    const update = () => {
+        const newProfile = {
+            FirstName: name,
+            location: location,
+            bio: bio,
+            website: website,
+            dateOfBirth: dateOfBirth
+        }
+        navigate('/tuiter/profile')
+        dispatch(updateProfile(newProfile))
+
     }
 
     return (
@@ -31,7 +35,8 @@ const EditProfiles = (
             <div className="row mb-2 mt-1">
                 <div className="col-2 position-relative">
                     <h3>
-                        <a className="bi bi-x-lg float-left" onClick={() => navigate("/tuiter/profile")}></a>
+                        <a className="bi bi-x-lg float-left"
+                           onClick={() => navigate("/tuiter/profile")}></a>
                     </h3>
 
                 </div>
@@ -39,7 +44,7 @@ const EditProfiles = (
                     <h4 className="fw-bolder">Edit profile</h4>
 
                     <button className="btn btn-dark rounded-pill position-absolute end-0 top-0"
-                            onClick={() => navigate("/tuiter/profile")}>save
+                            onClick={update}>save
                     </button>
 
                 </div>
@@ -57,11 +62,8 @@ const EditProfiles = (
                 <br/>
                 Name
                 <br/>
-                <textarea cols="50" value={profiles.FirstName}
-                          onChange={(e) => update(profiles, e.target.value)}></textarea>
-                <pre>
-                    {name}
-                </pre>
+                <textarea cols="50" value={name}
+                          onChange={(e) => setName(e.target.value)}></textarea>
             </div>
 
             <div>
@@ -69,7 +71,8 @@ const EditProfiles = (
                 <br/>
                 Location
                 <br/>
-                <textarea cols="50" value={profiles.location}></textarea>
+                <textarea cols="50" value={location}
+                          onChange={(e) => setLocation(e.target.value)}></textarea>
             </div>
 
             <div>
@@ -77,7 +80,8 @@ const EditProfiles = (
                 <br/>
                 Bio
                 <br/>
-                <textarea cols="50" value={profiles.bio}></textarea>
+                <textarea cols="50" value={bio}
+                          onChange={(e) => setBio(e.target.value)}></textarea>
             </div>
 
             <div>
@@ -85,7 +89,9 @@ const EditProfiles = (
                 <br/>
                 website
                 <br/>
-                <textarea cols="50" value={profiles.website}></textarea>
+                <textarea cols="50" value={website}
+                          onChange={(e) => setWebsite(e.target.value)}
+                ></textarea>
             </div>
 
             <div>
@@ -93,7 +99,8 @@ const EditProfiles = (
                 <br/>
                 Date of birth
                 <br/>
-                <textarea cols="50" value={profiles.dateOfBirth}></textarea>
+                <textarea cols="50" value={dateOfBirth}
+                          onChange={(e) => setDateOfBirth(e.target.value)}></textarea>
             </div>
 
 

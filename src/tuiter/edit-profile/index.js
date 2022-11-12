@@ -7,7 +7,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import profilesReducer from "../profile/profile-reducer"
 
 
-const store = createStore(profilesReducer)
+// const store = createStore(profilesReducer)
 
 // const store = configureStore(
 //     {reducer:{profiles: profilesReducer}});
@@ -19,9 +19,9 @@ const EditProfile =()=>{
     return(
         <div>
 
-            <Provider store={store}>
+            {/*<Provider store={store}>*/}
                 <EditProfileComponent/>
-            </Provider>
+            {/*</Provider>*/}
 
 
         </div>

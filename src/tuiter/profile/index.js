@@ -4,21 +4,18 @@ import {createStore} from "redux";
 import {Provider} from "react-redux";
 import profilesReducer from "./profile-reducer";
 
-const store = createStore(profilesReducer)
+// const store = createStore(profilesReducer)
 
 
 const Profile =()=>{
 
-
-
     return(
         <div>
-            <Provider store={store}>
+            {/*<Provider store={store}>*/}
                 <ProfileComponent/>
-            </Provider>
+            {/*</Provider>*/}
         </div>
     )
-
 }
 
 export default Profile;
