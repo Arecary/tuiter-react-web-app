@@ -26,3 +26,4 @@ export const updateTuit = async (tuit) => {
         .put(`${TUITS_API}/${tuit._id}`, tuit);
     return tuit;
 }
+

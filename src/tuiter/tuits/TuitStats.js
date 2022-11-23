@@ -5,22 +5,18 @@ import {unlikeTuit} from "./tuitsList-reducer"
 import {updateTuitThunk}
     from "../../services/tuits-thunks";
 
-
-
-
 const TuitStats = ({Post}
-    // {
-    //                    Post = {
-    //                        "avatarIcon": "starship.jpg", "userName": "Elon Musk", "handle": '@elonmusk',
-    //                        "time": '23h', "title1": 'Amazing show about ', "link": '@lnspiration4x ',
-    //                        "title2": 'mission!', "image": '../../../images/countdown.jpeg',
-    //                        "content": 'Countdown: Inspiration4 Mission to Space | Netflix Official Site',
-    //                        "content2": 'From training to launch to landing, this all-access docuseries rides along with the Inspiration4 crew on the first all-civilian orbital space mission.',
-    //                        "replies": 4200, "retuits": 3500, "likes": 37500, "liked": true
-    //
-    //                    }
-    //                }
-                   ) => {
+                   // {
+                   //                    Post = {
+                   //                        "avatarIcon": "starship.jpg", "userName": "Elon Musk",
+                   // "handle": '@elonmusk', "time": '23h', "title1": 'Amazing show about ',
+                   // "link": '@lnspiration4x ', "title2": 'mission!', "image":
+                   // '../../../images/countdown.jpeg', "content": 'Countdown: Inspiration4 Mission
+                   // to Space | Netflix Official Site', "content2": 'From training to launch to
+                   // landing, this all-access docuseries rides along with the Inspiration4 crew on
+                   // the first all-civilian orbital space mission.', "replies": 4200, "retuits":
+                   // 3500, "likes": 37500, "liked": true  } }
+) => {
     // const Post = useSelector((state) => state.tuitsList)
     const dispatch = useDispatch();
     // const unlikeclick = (Post) =>{
@@ -43,25 +39,45 @@ const TuitStats = ({Post}
                 <div className="row">
                     <div className="col-3 text-secondary">
                         <button className="btn btn-light">
-                        <i className="bi bi-chat"></i>
-                        </button>&nbsp;&nbsp;{Post.replies}
+                            <i className="bi bi-chat"></i>
+                        </button>
+                        &nbsp;&nbsp;{Post.replies}
                     </div>
 
                     <div className="col-3 text-secondary">
                         <button className="btn btn-light">
-                        <i className="bi bi-arrow-repeat"></i>
-                        </button>&nbsp;&nbsp;{Post.retuits}
+                            <i className="bi bi-arrow-repeat"></i>
+                        </button>
+                        &nbsp;&nbsp;{Post.retuits}
                     </div>
 
 
-                    <div>
-                        Likes: {Post.likes}
-                        <i onClick={()=>dispatch(updateTuitThunk({
-                                                                     ...Post,
-                                                                     likes: Post.likes + 1
-                                                                 }))}
-                           className="bi bi-heart-fill me-2 text-danger"></i>
+                    <div className="col-3 text-secondary pt-2">
+
+                        <div>
+                            <i onClick={() => dispatch(updateTuitThunk({
+                                                                           ...Post,
+                                                                           likes: Post.likes + 1
+                                                                       }))}
+                               className="bi bi-heart-fill me-2 text-danger"></i>
+                            &nbsp;&nbsp;{Post.likes}
+                        </div>
+
                     </div>
+
+                    <div className="col-3 text-secondary pt-2">
+
+                        <div>
+                            <i onClick={() => dispatch(updateTuitThunk({
+                                                                           ...Post,
+                                                                           dislikes: Post.dislikes - 1
+                                                                       }))}
+                               className="bi bi-hand-thumbs-down"></i>
+                            &nbsp;&nbsp;{Post.dislikes}
+                        </div>
+
+                    </div>
+
                     {/*<div className="col-3 text-secondary">*/}
                     {/*    {*/}
                     {/*        Post.liked &&*/}
@@ -85,11 +101,11 @@ const TuitStats = ({Post}
 
                     {/*</div>*/}
 
-                    <div className="col-3 text-secondary">
-                        <button className="btn btn-light">
-                        <i className="bi bi-share"></i>
-                        </button>
-                    </div>
+                    {/*<div className="col-1 text-secondary">*/}
+                    {/*    <button className="btn btn-light">*/}
+                    {/*        <i className="bi bi-share"></i>*/}
+                    {/*    </button>*/}
+                    {/*</div>*/}
                 </div>
 
             </div>
